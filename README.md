@@ -22,7 +22,7 @@
 * [Contact](#contact)
 
 ## General info
-This project is a copy of the application Spotify. 
+This project is a copy of the Spotify iOS version application and it is using the Spotify API.
 
 ## Preview
 
