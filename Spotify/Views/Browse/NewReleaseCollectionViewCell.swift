@@ -13,7 +13,7 @@ class NewReleaseCollectionViewCell: UICollectionViewCell {
     
     private let albumCoverImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "photo")
+        imageView.image = UIImage(systemName: "photo")
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
