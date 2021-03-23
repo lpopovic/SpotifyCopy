@@ -7,7 +7,7 @@
 [![Maintenance](https://img.shields.io/badge/UITabBarController-yes-green.svg)]()
 [![Maintenance](https://img.shields.io/badge/User%20Interaction-yes-green.svg)]()
 [![Maintenance](https://img.shields.io/badge/Dark%20Theme-yes-green.svg)]()
-[![Generic badge](https://img.shields.io/badge/iOS%20Deployment%20Target-13.0-blue.svg)]()
+[![Generic badge](https://img.shields.io/badge/iOS%20Deployment%20Target-14.0-blue.svg)]()
 
 # SpotifyCopy
 > This app is inspired by [Spotify](https://apps.apple.com/us/app/spotify-music-and-podcasts/id324684580) applicaton.
@@ -35,7 +35,7 @@ This project is a copy of the Spotify iOS version application and it is using th
 ## Build and Runtime Requirements
 + Xcode 9.3 or later
 + Swift 5 or later
-+ iOS 13.0 or later
++ iOS 14.0 or later
 + [CocoaPods](http://cocoapods.org/) 
 
 ## How to run 
