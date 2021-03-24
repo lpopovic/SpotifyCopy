@@ -37,6 +37,9 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         .systemIndigo,
         .systemPink,
         .darkGray,
+        .lightGray,
+        .purple,
+        .brown
     ]
     
     override init(frame: CGRect) {
