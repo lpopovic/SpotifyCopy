@@ -414,6 +414,8 @@ extension HomeViewController: UICollectionViewDelegate {
             navigationController?.pushViewController(vc, animated: true)
             break
         case .recommendedTracks:
+            let track = self.tracks[indexPath.row]
+            PlaybackPresenter.shared.startPlayback(from: self, track: track)
             break
         }
     }
