@@ -2,7 +2,7 @@
 //  AlbumViewController.swift
 //  Spotify
 //
-//  Created by MacBook on 3/1/21.
+//  Created by Lazar Popovic on 3/1/21.
 //
 
 import UIKit

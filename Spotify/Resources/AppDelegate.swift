@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Spotify
 //
-//  Created by MacBook on 2/28/21.
-// video 23 zapoceti iz playliste
+//  Created by Lazar Popovic on 2/28/21.
+// 23
 
 import UIKit
 

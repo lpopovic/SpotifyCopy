@@ -2,7 +2,7 @@
 //  PlaylistHeaderCollectionReusableView.swift
 //  Spotify
 //
-//  Created by MacBook on 3/23/21.
+//  Created by Lazar Popovic on 3/23/21.
 //
 
 import UIKit
