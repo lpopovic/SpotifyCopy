@@ -65,19 +65,109 @@ final class APICaller {
     }
     
     public func getCurrentUserPlaylists(completion: @escaping (Result<[Playlist], Error>) -> Void) {
-        
+        createRequest(with: URL(string: Constants.baseApiUrl + "/me/playlists/?limit=50"),
+                      type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
+                guard  let data = data, error == nil else {
+                    completion(.failure(ApiError.faileedToGetData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(LibraryPlaylistsResponse.self, from: data)
+                    completion(.success(result.items))
+                    
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
     }
     
     public func createPlaylist(with name: String, completion: @escaping (Bool) -> Void) {
-        
+        getCurrentUserProfile { [weak self] result in
+            switch result {
+            case .success(let profile):
+                let urlString = Constants.baseApiUrl + "/users/\(profile.id)/playlists"
+                
+                self?.createRequest(with: URL(string: urlString),
+                              type: .POST) { baseRequest in
+                    var request = baseRequest
+                    let body =  [
+                        "name": name
+                    ]
+                    request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+                    
+                    let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
+                        guard  let data = data, error == nil else {
+                            completion(false)
+                            return
+                        }
+                        do {
+                            let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                            if let response = result as? [String: Any], response["id"] as? String != nil {
+                                print("Create Playlist")
+                                completion(true)
+                            } else {
+                                print("Failed to create Playlist")
+                                completion(false)
+                            }
+                           
+                            
+                        } catch {
+                            completion(false)
+                        }
+                    }
+                    task.resume()
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(false)
+            }
+        }
     }
     
     public func addTrackToPlaylist(track: AudioTrack, playlist: Playlist, completion: @escaping (Bool) -> Void) {
-        
+        createRequest(with: URL(string: Constants.baseApiUrl + "/"),
+                      type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
+                guard  let data = data, error == nil else {
+                    completion(false)
+                    return
+                }
+                do {
+                    let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    print(result)
+//                    completion(.success(result))
+                    
+                } catch {
+                    completion(false)
+                }
+            }
+            task.resume()
+        }
     }
     
     public func removeTrackFromPlaylist(track: AudioTrack, playlist: Playlist, completion: @escaping (Bool) -> Void) {
-        
+        createRequest(with: URL(string: Constants.baseApiUrl + "/"),
+                      type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
+                guard  let data = data, error == nil else {
+                    completion(false)
+                    return
+                }
+                do {
+                    let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    print(result)
+//                    completion(.success(result))
+                    
+                } catch {
+                    completion(false)
+                }
+            }
+            task.resume()
+        }
     }
     
     // MARK: - Profile
