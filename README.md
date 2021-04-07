@@ -27,7 +27,8 @@ This project is a copy of the Spotify iOS version application and it is using th
 ## Preview
 
 ### Images
-<img src="" width="480"/> 
+<img src="https://github.com/lpopovic/SpotifyCopy/blob/master/Preview/IMAGE_PREVIEW_01.png" width="240"/> <img src="https://github.com/lpopovic/SpotifyCopy/blob/master/Preview/IMAGE_PREVIEW_02.png" width="240"/> 
+<img src="https://github.com/lpopovic/SpotifyCopy/blob/master/Preview/IMAGE_PREVIEW_03.png" width="240"/> 
 
 ### GIF
 <img src="" width="480"/>
