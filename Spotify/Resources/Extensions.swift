@@ -69,3 +69,7 @@ extension UIAlertController {
         vc.present(alertVC, animated: true, completion: nil)
     }
 }
+
+extension Notification.Name {
+    static let albumSavedNotification = Notification.Name("albumSavedNotification")
+}
