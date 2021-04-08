@@ -93,7 +93,10 @@ class AlbumViewController: UIViewController {
                 DispatchQueue.main.async {
                     UIAlertController.showApiCallerMessage(self, title: "Save Album", message: "You save album success: \(success)")
                     if success {
+                        HapticsManager.shared.vibrate(for: .success)
                         NotificationCenter.default.post(name: .albumSavedNotification, object: nil)
+                    } else {
+                        HapticsManager.shared.vibrate(for: .error)
                     }
                 }
             }
@@ -165,6 +168,7 @@ extension AlbumViewController: UICollectionViewDelegate,UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        HapticsManager.shared.vibrateForSelection()
         var track = tracks[indexPath.row]
         track.album = self.album
         PlaybackPresenter.shared.startPlayback(from: self, track: track)

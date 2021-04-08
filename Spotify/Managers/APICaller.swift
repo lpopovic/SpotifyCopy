@@ -52,7 +52,6 @@ final class APICaller {
                 }
                 do {
                     let result = try JSONDecoder().decode(LibraryAlbumsResponse.self, from: data)
-                    print(result)
                     completion(.success(result.getAlbums()))
                     
                 } catch {
@@ -292,7 +291,6 @@ final class APICaller {
                 
                 do {
                     let result = try JSONDecoder().decode(FeaturedPlaylistsResponse.self, from: data)
-                    //                    print(result)
                     completion(.success(result))
                     
                 } catch {
@@ -336,7 +334,6 @@ final class APICaller {
                 
                 do {
                     let result = try JSONDecoder().decode(RecommendedGenresResponse.self, from: data)
-                    //                        print(result)
                     completion(.success(result))
                     
                 } catch {
