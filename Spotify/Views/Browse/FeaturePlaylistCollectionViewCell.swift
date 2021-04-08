@@ -76,6 +76,6 @@ class FeaturePlaylistCollectionViewCell: UICollectionViewCell {
     func configure(with viewModel: FeaturedPlaylistCellViewModel) {
         playlistNameLabel.text = viewModel.name
         creatorNameLabel.text = viewModel.creatorName
-        playlistCoverImageView.sd_setImage(with: viewModel.artworkURL, completed: nil)
+        playlistCoverImageView.sd_setImage(with: viewModel.artworkURL, placeholderImage: UIImage(systemName: "photo"), completed: nil)
     }
 }

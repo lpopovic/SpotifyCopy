@@ -72,6 +72,6 @@ class RecommendedTrackCollectionViewCell: UICollectionViewCell {
     func configure(with viewModel: RecommendedTrackCellViewModel) {
         trackNameLabel.text = viewModel.name
         artistNameLabel.text = viewModel.artistName
-        albumCoverImageView.sd_setImage(with: viewModel.artworkURL, completed: nil)
+        albumCoverImageView.sd_setImage(with: viewModel.artworkURL, placeholderImage: UIImage(systemName: "photo"), completed: nil)
     }
 }

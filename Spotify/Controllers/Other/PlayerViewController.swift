@@ -53,7 +53,7 @@ class PlayerViewController: UIViewController {
     }
     
     private func configure() {
-        imageView.sd_setImage(with: dataSource?.imageURL, completed: nil)
+        imageView.sd_setImage(with: dataSource?.imageURL, placeholderImage: UIImage(systemName: "photo"), completed: nil)
         controlsView.configure(with:
                                 PlayerControlsViewViewModal(title: dataSource?.songName,
                                                             subtitile: dataSource?.subtitle)
