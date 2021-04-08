@@ -65,7 +65,7 @@ class LibraryPlaylistsViewController: UIViewController {
                     self?.updateUI()
                     break
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    UIAlertController.showApiCallerMessage(self, title: nil, message: error.localizedDescription)
                     break
                 }
             }
@@ -108,7 +108,7 @@ class LibraryPlaylistsViewController: UIViewController {
                     // Refresh list of playlists
                     self?.fetchData()
                 } else {
-                    print("Failed to create playlist!")
+                    UIAlertController.showApiCallerMessage(self, title: nil, message: "Failed to create playlist!")
                 }
             }
         }))

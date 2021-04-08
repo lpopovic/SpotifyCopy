@@ -43,7 +43,7 @@ class ProfileViewController: UIViewController {
                 case.success(let model):
                     self?.updateUI(with: model)
                 case .failure(let error):
-                    print("Profile Error: \(error.localizedDescription)")
+                    UIAlertController.showApiCallerMessage(self, title: nil, message: "Profile Error: \(error.localizedDescription)")
                     self?.failedToGetProfie()
                 }
             }

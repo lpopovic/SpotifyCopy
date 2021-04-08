@@ -69,7 +69,7 @@ class SearchViewController: UIViewController {
                     self?.collectionView.reloadData()
                     break
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    UIAlertController.showApiCallerMessage(self, title: nil, message: error.localizedDescription)
                     break
                 }
             }
@@ -103,7 +103,7 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
                     resultsController.update(with: results)
                     break
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    UIAlertController.showApiCallerMessage(self, title: nil, message: error.localizedDescription)
                     break
                 }
             }

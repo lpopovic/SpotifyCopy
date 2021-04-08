@@ -56,3 +56,16 @@ extension String {
         return DateFormatter.displayDateFormatter.string(from: date)
     }
 }
+
+extension UIAlertController {
+    static func showApiCallerMessage(_ viewController: UIViewController?, title: String?, message: String) {
+        let alertVC = UIAlertController(
+            title: title ?? "Ooops",
+            message: message,
+            preferredStyle: .alert)
+        
+        alertVC.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        guard let vc = viewController else { return  }
+        vc.present(alertVC, animated: true, completion: nil)
+    }
+}

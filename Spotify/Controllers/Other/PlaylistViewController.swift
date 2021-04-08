@@ -91,7 +91,7 @@ class PlaylistViewController: UIViewController {
                     self?.collectionView.reloadData()
                     break
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    UIAlertController.showApiCallerMessage(self, title: nil, message: error.localizedDescription)
                     break
                 }
             }
@@ -156,7 +156,7 @@ class PlaylistViewController: UIViewController {
                         strongSelf.viewModals.remove(at: indexPath.row)
                         strongSelf.collectionView.reloadData()
                     } else {
-                        print("Remove from playlist success: \(success)")
+                        UIAlertController.showApiCallerMessage(self, title: nil, message: "Remove from playlist success: \(success)")
                     }
                 }
             }

@@ -204,6 +204,8 @@ class HomeViewController: UIViewController {
             guard let newAlbums = newReleases?.albums.items,
                   let playlists = featuredPlaylists?.playlists.items,
                   let tracks = recommendations?.tracks else {
+                
+                UIAlertController.showApiCallerMessage(self, title: nil, message: "Internet Failure...")
                 return
             }
             

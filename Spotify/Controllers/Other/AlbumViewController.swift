@@ -86,7 +86,7 @@ class AlbumViewController: UIViewController {
                     self?.collectionView.reloadData()
                     break
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    UIAlertController.showApiCallerMessage(self, title: nil, message: error.localizedDescription)
                     break
                 }
             }
