@@ -61,8 +61,6 @@ class SearchViewController: UIViewController {
         collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
         
-        tabBarController?.delegate = self
-        
         APICaller.shared.getGategories { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -82,7 +80,7 @@ class SearchViewController: UIViewController {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
     }
-
+    
 }
 
 extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
@@ -172,13 +170,4 @@ extension SearchViewController: SearchResultsViewControllerDelegate {
       
     }
     
-}
-
-extension SearchViewController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        let tabBarIndex = tabBarController.selectedIndex
-        if tabBarIndex == 1 {
-            self.collectionView.resetScrollPositionToTop()
-        }
-    }
 }

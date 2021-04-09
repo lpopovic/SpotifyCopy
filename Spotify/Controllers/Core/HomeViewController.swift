@@ -476,4 +476,5 @@ extension HomeViewController: UITabBarControllerDelegate {
             self.collectionView.resetScrollPositionToTop()
         }
     }
+    
 }
