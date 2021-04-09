@@ -31,7 +31,7 @@ This project is a copy of the Spotify iOS version application and it is using th
 <img src="https://github.com/lpopovic/SpotifyCopy/blob/master/Preview/IMAGE_PREVIEW_03.png" width="240"/> 
 
 ### GIF
-<img src="" width="480"/>
+<img src="https://github.com/lpopovic/SpotifyCopy/blob/master/Preview/GIF_PREVIEW_01.gif" width="240"/> 
 
 ## Build and Runtime Requirements
 + Xcode 9.3 or later
