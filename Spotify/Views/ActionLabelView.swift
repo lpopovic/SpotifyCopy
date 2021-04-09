@@ -2,7 +2,7 @@
 //  ActionLabelView.swift
 //  Spotify
 //
-//  Created by MacBook on 4/7/21.
+//  Created by Lazar Popovic on 4/7/21.
 //
 
 import UIKit
