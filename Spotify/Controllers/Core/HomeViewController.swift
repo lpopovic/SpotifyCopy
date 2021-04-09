@@ -61,6 +61,7 @@ class HomeViewController: UIViewController {
         
         fetchData()
         addLongTapGesture()
+        self.tabBarController?.delegate = self
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -464,6 +465,15 @@ extension HomeViewController: UICollectionViewDelegate {
             let track = self.tracks[indexPath.row]
             PlaybackPresenter.shared.startPlayback(from: self, track: track)
             break
+        }
+    }
+}
+
+extension HomeViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        let tabBarIndex = tabBarController.selectedIndex
+        if tabBarIndex == 0 {
+            self.collectionView.resetScrollPositionToTop()
         }
     }
 }

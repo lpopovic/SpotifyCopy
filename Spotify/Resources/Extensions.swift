@@ -73,3 +73,9 @@ extension UIAlertController {
 extension Notification.Name {
     static let albumSavedNotification = Notification.Name("albumSavedNotification")
 }
+
+extension UIScrollView {
+    func resetScrollPositionToTop() {
+        self.setContentOffset(.zero, animated: true)
+    }
+}
